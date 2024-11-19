@@ -1,0 +1,1017 @@
+/* Variables Globales */
+:root {
+    /* Sistema de colores */
+    --color-primary: #FFFFFF;
+    --color-secondary: #16160e;
+    --color-accent: #8C4414;
+    /* --color-accent: #D16A26; */
+    /* --color-accent: #D06926; */
+    --color-highlight: #B4CD93;
+    --color-dark-bg: #1C1F26;
+    --color-header-bg: rgba(12, 12, 7, 0.64);
+    --color-overlay-dark: rgba(50, 50, 50, 0.6);
+    --color-overlay-light: rgba(180, 205, 147, 0.85);
+    
+    /* Sistema de tipografía */
+    --font-family-title: "Bebas Neue", sans-serif;
+    --font-family-body: "Raleway", sans-serif;
+}
+
+/* Reset y Estilos Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Raleway", sans-serif;
+    background-color: var(--color-secondary);
+    line-height: 1.3;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.no-scroll {
+    overflow: hidden;
+}
+
+/* Tipografía */
+h1 {
+    font-size: clamp(2rem, 3vw, 4rem);
+}
+
+h1, h2 {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 600;
+}
+
+h2 {
+    padding-left: 20px;
+    font-size: clamp(1.8rem, 3vw, 3rem);
+}
+
+h3 p {
+    font-family: "Raleway", sans-serif;
+}
+
+p {
+    font-size: clamp(1rem, 1rem, 1.5rem);
+}
+
+/* Header */
+.header {
+    background-color: var(--color-header-bg);
+    color: var(--color-primary);
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    z-index: 10;
+    transition: background-color 0.3s ease;
+}
+
+.header__title {
+    text-align: center;
+    padding: 30px 0 5px;
+    color: var(--color-primary);
+    letter-spacing: 0.5rem;
+}
+
+/* Navegación */
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+    width: 100%;
+    z-index: 1000;
+}
+
+.navbar__list {
+    display: flex;
+    list-style-type: none;
+}
+
+.navbar__item {
+    margin: 0 15px;
+    transition: transform 0.3s ease;
+}
+
+.navbar__link {
+    font-family: var(--font-family-body);
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.2rem;
+    color: var(--color-primary);
+    text-decoration: none;
+}
+
+.navbar__link:focus {
+    outline: 2px solid var(--color-highlight);
+}
+
+.navbar--fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--color-secondary);
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+}
+
+/* Menú Toggle */
+.toggle-menu {
+    display: none;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    height: 50px;
+    width: 20px;
+    position: relative;
+    z-index: 1110;
+}
+
+.toggle-menu span,
+.toggle-menu span:before,
+.toggle-menu span:after {
+    background-color: var(--color-primary);
+    content: "";
+    display: block;
+    height: 2px;
+    left: calc(50% - 13px);
+    position: absolute;
+    width: 26px;
+    transition: transform 0.2s linear, top 0.2s ease-out, background-color 0.2s ease-in-out;
+}
+
+.toggle-menu span {
+    top: calc(50% - 1px);
+}
+
+.toggle-menu span:before {
+    top: -7px;
+}
+
+.toggle-menu span:after {
+    top: 7px;
+}
+
+.toggle-menu.active span {
+    background-color: transparent;
+}
+
+.toggle-menu.active span:before {
+    top: 0;
+    transform: rotate(45deg);
+}
+
+.toggle-menu.active span:after {
+    top: 0;
+    transform: rotate(-45deg);
+}
+
+/* Efectos Hover */
+.icon-hover-efect:hover,
+.project-card:hover .project-card__content {
+    transform: translateY(-5px);
+}
+
+/* Home */
+.home {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+.home__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.home__content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.home__social {
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #0c0c07ee 100%);
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    height: 80px;
+    align-items: center;
+}
+
+.social-icons {
+    display: flex;
+    padding-right: 50px;
+    gap: 20px;
+}
+
+.social-icon {
+    color: var(--color-primary);
+    font-size: 25px;
+    transition: transform 0.3s ease;
+}
+
+/* Bio */
+.bio {
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
+    padding: 90px 40px 85px;
+}
+
+.bio__content {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.bio__title {
+    margin-bottom: 20px;
+}
+
+.bio__text {
+    flex: 1;
+}
+
+.bio__description {
+    padding-left: 20px;
+}
+
+.bio__image-wrapper {
+    padding-right: 20px;
+}
+
+.bio__image {
+    height: 350px;
+}
+
+/* Classes */
+.classes {
+    background-color: var(--color-secondary);
+    color: var(--color-primary);
+}
+
+.classes__banner {
+    background-image: url('./img/jose-francisco-sanchez-clases.webp');
+    height: 400px;
+    background-size: cover;
+    background-position: center 23%;
+    position: relative;
+}
+
+.classes__banner::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.048) 20%, var(--color-secondary) 100%);
+}
+
+.classes__title {
+    position: absolute;
+    bottom: 0;
+    z-index: 1;
+    padding-left: 60px;
+    color: var(--color-primary);
+}
+
+.classes__content {
+    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.classes__intro {
+    text-align: center;
+    margin: 20px 0 60px 0;
+}
+
+.classes__cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 20px;
+}
+
+/* Class Card */
+.class-card {
+    border: 2px solid var(--color-primary);
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease;
+}
+
+.class-card:hover {
+    transform: translateY(-10px);
+}
+
+.class-card__header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.class-card__icon {
+    width: 40px;
+    height: 40px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.class-card__icon--individual {
+    background-image: url('./img/octicon_feed-person-16.svg');
+}
+
+.class-card__icon--group {
+    background-image: url('./img/icono3.svg');
+}
+
+.class-card__icon--ensemble {
+    background-image: url('./img/ico-ensamble.svg');
+}
+
+.class-card__features {
+    list-style: none;
+    padding-top: 25px;
+    margin: 0;
+}
+
+.class-card__feature {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+.class-card__bullet {
+    margin-right: 10px;
+    width: 15px;
+    height: 15px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: inline-block;
+}
+
+.mdi--guitar-pick {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='white' d='M19 4.1c-.9-.8-2-1.3-3.2-1.6c-.3-.1-2.2-.5-3.6-.5h-.4c-1.4 0-3.4.4-3.7.5c-1.1.3-2.2.8-3.1 1.6C3 5.9 3 8.7 4 11c1 2.5 2.1 4.7 3.6 6.9C8.8 19.6 10.1 22 12 22s3.2-2.4 4.5-4.1c1.5-2.1 2.6-4.4 3.6-6.9c.9-2.3.9-5.1-1.1-6.9'/%3E%3C/svg%3E");
+}
+
+.class-card__link {
+    text-align: center;
+    padding: 10px 20px;
+    margin-top: 20px;
+    background: transparent;
+    border: 2px solid var(--color-primary);
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: background 0.3s ease, color 0.3s ease;
+    align-self: center;
+    cursor: pointer;
+}
+
+.class-card__link:hover {
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
+}
+
+.classes__reviews {
+    text-align: center;
+    margin-top: 40px;
+    padding: 45px
+}
+
+.classes__reviews-title {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.classes__review {
+    font-style: italic;
+    color: var(--color-primary);
+}
+
+.music {
+    background-image: url('./img/jose-francisco-sanchez-music.webp');
+    background-size: cover;
+    background-position: center 23%;
+}
+
+.music__title {
+    text-align: left;
+    padding: 60px 60px 5px;
+    color: var(--color-secondary);
+}
+
+.music__upcoming {
+    background-color: rgba(180, 205, 147, 0.85);
+    color: var(--color-secondary);
+    padding-bottom: 60px;
+}
+
+.music__content-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.music__info {
+    flex: 1;
+    max-width: 400px;
+    text-align: center;
+    margin: 20px;
+}
+
+.music__spotify-preview {
+    flex: 1;
+    max-width: 400px;
+    margin: 20px;
+    /* display: none; */
+}
+
+.music__spotify-iframe {
+    border: none;
+    width: 100%;  /* Ancho del iframe */
+    height: 152px;  /* Alto del iframe */
+}
+
+.music__subtitle {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: normal;
+    margin-bottom: 10px;
+}
+
+.music__song-title {
+    font-size: 2.3em;
+    font-family: var(--font-body);
+    font-weight: 600;
+    letter-spacing: 5px;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+.music__image {
+    display: block;
+    margin: 0 auto;
+    max-width: 80%; /* Tamaño ajustado para que no se vea demasiado grande */
+    height: auto;
+}
+
+.music__description {
+    margin-top: 20px;
+    font-family: var(--font-body);
+    text-align: center;
+}
+
+.music__spotify-iframe {
+    border-radius: 12px;
+    width: 100%; /* Asegura que ocupe todo el ancho del contenedor */
+    height: 152px;
+}
+
+.music__full-song-link {
+    display: block;
+    background-color: var(--color-secondary);
+    color: var(--color-primary);
+    padding: 10px;
+    margin: 20px auto 0;
+    text-align: center;
+    width: 60%;
+    text-decoration: none;
+    border: 1px solid var(--color-primary);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.music__full-song-link:hover {
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
+}
+
+.music__videos {
+    background-color: rgba(12, 12, 7, 0.85);
+    color: var(--color-primary);
+    text-align: center;
+    padding: 60px 50px;
+}
+
+.music__videos-title {
+    font-size: 1.5rem;
+    margin-bottom: 40px;
+}
+
+.music__video-list {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.music__video {
+    width: 100%;
+    max-width: 368px;
+    height: 207px;
+    border: none;
+}
+
+.projects {
+    background: linear-gradient(180deg, var(--color-accent) 0%, var(--color-secondary) 100%);
+    color: var(--color-primary);
+    position: relative;
+    padding: 120px 40px 40px;
+    overflow: hidden;
+}
+
+.projects::before {
+    content: 'PROYECTOS';
+    font-family: var(--font-family-title);
+    font-size: 18em;
+    font-weight: 600;
+    letter-spacing: 25px;
+    color: transparent;
+    background: linear-gradient(to bottom, #4e20113f, #92471446);
+    -webkit-background-clip: text;
+    background-clip: text;
+    position: absolute;
+    top: -1.5rem;
+    left: 3.4rem;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    z-index: 0;
+}
+
+.projects__cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    position: relative;
+    z-index: 2;
+}
+
+.project-card {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    height: 300px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: var(--color-primary);
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card__image-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    flex-grow: 1;
+}
+
+.project-card__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: opacity 0.3s ease;
+    opacity: 0.6;
+}
+
+.project-card__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(50, 50, 50, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    transition: opacity 0.3s ease;
+    opacity: 1;
+}
+
+.project-card__title {
+    font-size: 2em;
+    color: var(--color-primary);
+    text-align: center;
+}
+
+.project-card__content {
+    padding: 20px;
+    display: none;
+    text-align: left;
+}
+
+.project-card__description {
+    margin-bottom: 20px;
+    font-size: 1rem;
+    color: var(--color-secondary);
+}
+
+/* Contenedor para las etiquetas de enlaces */
+.project-card__labels {
+    display: flex;
+    gap: 10px; /* Ajusta el espacio entre las etiquetas según necesites */
+    margin-top: 10px; /* Agrega un margen si deseas más separación del texto */
+}
+
+/* Estilos de las etiquetas */
+.project-card__label {
+    display: inline-flex;
+    align-items: center;
+    background-color: var(--color-secondary);
+    color: var(--color-primary);
+    font-weight: bold;
+    font-size: 0.875rem;
+    padding: 6px 12px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+.project-card__favicon {
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+}
+
+.project-card__label:hover {
+    transform: translateY(-6px);
+}
+
+.project-card:hover .project-card__overlay {
+    opacity: 0;
+}
+
+.project-card:hover .project-card__image {
+    opacity: 1;
+}
+
+.project-card:hover .project-card__content {
+    display: block; /* El contenido textual se muestra al hacer hover */
+}
+
+.projects__more-button {
+    background: transparent;
+    border: 2px solid var(--color-primary);
+    color: var(--color-primary);
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+    z-index: 2;
+}
+
+.projects__more-button:hover {
+    background: var(--color-primary);
+    color: var(--color-secondary);
+}
+
+.contact {
+    background-color: var(--color-secondary);
+    color: var(--color-primary);
+    text-align: left;
+    padding: 40px;
+}
+
+.contact__container {
+    padding: 40px 20px 20px;
+}
+
+.contact__info {
+    padding-left: 40px;
+}
+
+.contact__info-email, 
+.contact__follow {
+    padding-top: 20px;
+}
+
+.contact__email {
+    color: var(--color-primary);
+    text-decoration:underline;
+}
+
+.contact__email:hover {
+    color: var(--color-accent);
+    font-weight: bold;
+}
+
+.contact__social-icons {
+    padding-top: 10px;
+}
+
+.footer {
+    background-color: var(--color-dark-bg);
+    color: var(--color-highlight);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    font-size: 0.8rem;
+}
+.footer__links {
+    display: flex;
+    gap: 20px;
+}
+.footer__link {
+    color: var(--color-highlight);
+    text-decoration: none;
+}
+
+.footer__link--space::after{
+    content: '|';
+}
+
+.footer__link:hover {
+    color: var(--color-accent);
+    font-weight: bold;
+}
+.footer__copyright {
+    padding: 10px;
+    font-size: 0.8rem; 
+}
+
+/* Responsive Design */
+@media screen and (min-width: 769px) {
+    .navbar--fixed {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: #16160e;
+        box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+    }
+}
+@media screen and (min-width: 1440px) {
+    .header {
+        padding: 30px 0;
+    }
+    .header__title {
+        font-size: 3rem;
+    }
+    .navbar__list {
+        display: flex;
+    }
+    .toggle-menu {
+        display: none;
+    }
+    .navbar__link {
+        font-size: 1.1rem;
+    }
+    .bio__image {
+        height: 600px;
+    }
+    .classes__banner {
+        height: 600px;
+    }
+}
+
+/* Tablets (Landscape & Portrait) */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .header {
+        padding: 15px 0;
+    }
+    .navbar__list {
+        gap: 30px;
+    }
+    .toggle-menu {
+        display: none;
+    }
+    .bio {
+        padding: 60px 30px;
+    }
+    .music__content-container {
+        flex-direction: column;
+    }
+}
+
+/* Mobile Devices */
+@media screen and (max-width: 768px) {
+    h2 {
+        padding-left: 0px;
+    }
+    .navbar__link {
+        font-size: 1.3rem;
+    }
+    .header {
+        flex-direction: row;
+        justify-content: space-between;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 80px;
+        background-color: rgba(12, 12, 7, 0.64);
+        transition: background-color 0.3s ease;
+        z-index: 1100;
+    }
+    .header__title{
+        padding: 20px;
+        font-size: 1.5rem;
+        letter-spacing: 2px;
+        text-align: left;
+        min-inline-size: max-content;
+    }
+    .navbar {
+        justify-content: flex-end;
+    }
+    .navbar--fixed {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: #16160e;
+        z-index: 1000;
+    }
+    .navbar__list {
+        opacity: 0;
+        visibility: hidden;
+        gap: 40px;
+        pointer-events: none;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+        background-color: #16160e;
+    }
+    .navbar__list.active {
+        display: flex;
+        visibility: visible;
+        opacity: 1;
+        pointer-events: all;
+        top: 80px;
+    }
+    .navbar__link{
+        font-family: var(--font-body);
+        font-size: 1.5rem;
+        font-weight: 600;
+    }   
+    .toggle-menu {
+        display: block;
+        position: relative;
+        z-index: 1200;
+    }
+    #menu {
+        background: rgba(22, 22, 14, 0.92);
+        height: 100%;
+        left: 0;
+        opacity: 0;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1100;
+        transition: all 0.7s ease-in-out;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    #menu.open {
+        visibility: visible;
+        pointer-events: inherit;
+        opacity: 1;
+    }
+    #menu.open #menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+    .toggle-menu {
+        display: block;
+    }
+    #menu.open .navbar__list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+    .home__social {
+        justify-content: center;
+    }
+    .home__social-icons {
+        padding: 0;
+    }
+    .bio__image-wrapper {
+        padding-right: 0;
+    }
+    .bio__image {
+        display: none;
+    }
+    .bio__description {
+        padding: 0;
+    }
+    .classes__banner {
+        height: 150px;
+        background-image: none;
+    }
+    .classes__banner::after{
+        display: none;
+    }
+    .classes__title{
+        padding-left: 40px;
+    }
+    .classes__cards {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+    .class-card {
+        padding: 10px;
+    }
+    .class-card__title {
+        font-size: 1.1rem;
+    }
+    .classes__intro{
+        text-align: left;
+        padding: 0px 0px 40px 0px;
+        margin: 0;
+    }
+    .music{
+        background-image: none;
+    }
+    .music__title {
+        padding: 80px 40px 10px 40px;
+    }
+    .music__content-container{
+        display: flex;
+        flex-direction: column;
+    }
+    .music__description{
+        padding: 0 20px;
+    }
+    .music__videos {
+        background-color: #16160e;
+    }
+    .section-section{
+        padding: 80px 40px;
+    }
+    .projects::before{
+        display: none;
+    }
+    .projects__cards {
+        gap: 20px;
+        padding: 0;
+    }
+    .project-card {
+        height: auto;
+        max-width: 100%;
+        flex-direction: column;
+    }
+    .project-card__image-container {
+        height: 200px;
+    }
+    .project-card__title {
+        font-size: 1.5rem;
+    }
+    .section-section.contact {
+        padding-top: 0px;
+    }
+    .footer{
+        padding: 40px;
+    }
+    .footer, .footer__links {
+        font-size: 1rem;
+        font-weight: 400;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+    }
+    .footer__copyright{
+        font-size: 0.8rem;
+        padding: 0;
+    }
+    .footer__link--space::after{
+        display: none;
+    }
+    .footer__links{
+        gap: 1px;
+    }
+}
