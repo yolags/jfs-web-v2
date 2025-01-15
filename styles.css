@@ -1,3 +1,19 @@
+/* Bebas Neue */
+@font-face {
+    font-family: 'Bebas Neue';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('https://fonts.gstatic.com/s/bebasneue/v14/JTUSjIg1_i6t8kCHKm459WlhzQ.woff2') format('woff2');
+}
+/* Raleway */
+@font-face {
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: swap;
+    src: url('https://fonts.gstatic.com/s/raleway/v19/1Ptug8zYS_SKggPNyC0IT4ttDfA.woff2') format('woff2');
+}
 /* Variables Globales */
 :root {
     /* Sistema de colores */
@@ -5,8 +21,8 @@
     --color-secondary: #16191B;
     --color-accent: #CFC5B7;
     --color-highlight: #8C4414;
-    --color-overlay-dark: rgba(22, 25, 27, 0.70);
-    --color-overlay-light: rgba(122, 125, 129, 0.41);
+    --color-overlay-dark: #16191bb3;
+    --color-overlay-light: #7a7d8169;
     
     /* Sistema de tipografía */
     --font-family-title: "Bebas Neue", sans-serif;
@@ -47,10 +63,6 @@ h2 {
 }
 
 h3 {
-    font-family: var(--font-family-body);
-}
-
-h4{
     font-family: var(--font-family-body);
 }
 
@@ -734,16 +746,67 @@ a{
     font-size: 0.8rem; 
 }
 
+/* Estilos para el banner de Privacidad y Cookies */
+.cookie-banner {
+    position: fixed;
+    bottom: -100%; /* Fuera de pantalla inicialmente */
+    left: 0;
+    right: 0;
+    background-color: rgba(6, 9, 10, 0.89);
+    color: var(--color-primary);
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    gap: 1rem;
+    opacity: 0; /* Oculto inicialmente */
+    transition: bottom 2s ease-out, opacity 2s ease-out; /* Ajuste en la duración de la transición */
+}
+
+.cookie-banner.show {
+    bottom: 0; /* Se desliza hacia arriba */
+    opacity: 1; /* Aparece */
+}
+
+.cookie-banner.hidden {
+    display: none !important; /* Se oculta completamente */
+}
+
+.cookie-banner p {
+    margin: 0;
+    flex: 1;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.cookie-banner__link {
+    color: var(--color-primary);
+    text-decoration: underline;
+}
+
+.cookie-banner__buttons {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.cookie-btn {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
 /* Estilos para los modales */
 .modal {
-    display: none;
+    display: block;
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: white;
+    background-color: var(--color-primary);
     padding: 30px;
-    border-radius: 12px;
     max-width: 80%;
     max-height: 80vh;
     width: 600px;
@@ -759,20 +822,23 @@ a{
 
 .modal::-webkit-scrollbar-track {
     background: #f1f1f1;
-    border-radius: 4px;
 }
 
 .modal::-webkit-scrollbar-thumb {
     background: #888;
-    border-radius: 4px;
 }
 
 .modal::-webkit-scrollbar-thumb:hover {
     background: #555;
 }
 
-.modal-overlay {
+.modal.hidden,
+.modal-overlay.hidden {
     display: none;
+}
+
+.modal-overlay {
+    display: block;
     position: fixed;
     top: 0;
     left: 0;
@@ -845,13 +911,13 @@ a{
 /* Estilos para el contenido dentro de los modales */
 .modal h2 {
     margin-top: 0;
-    color: #333;
+    color: var(--color-secondary);
     font-size: 1.8em;
     margin-bottom: 20px;
 }
 
 .modal h3 {
-    color: #444;
+    color: var(--color-secondary);
     margin-top: 25px;
     margin-bottom: 15px;
     font-size: 1.3em;
@@ -1199,5 +1265,27 @@ a{
     }
     .footer__links{
         gap: 1px;
+    }
+    .cookie-banner {
+        padding: 1rem;
+        bottom: 0;
+        margin: 0;
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    .cookie-banner p {
+        font-size: 1rem;
+    }
+
+    .cookie-banner__buttons {
+        justify-content: center;
+        width: 100%;
+    }
+
+    .cookie-btn {
+        flex: 1;
+        text-align: center;
+        white-space: nowrap;
     }
 }
