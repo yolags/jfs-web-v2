@@ -291,7 +291,7 @@ a{
 .music__upcoming {
     background-color: var(--color-overlay-light);
     color: var(--color-accent);
-    padding-bottom: 60px;
+    /* padding-bottom: 60px; */
 }
 
 .music__content-container {
@@ -308,7 +308,7 @@ a{
     margin: 20px;
 }
 
-.music__spotify-preview {
+.music__spotify-playlist {
     flex: 1;
     max-width: 400px;
     margin: 20px;
