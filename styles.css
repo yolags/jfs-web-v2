@@ -291,7 +291,7 @@ a{
 .music__upcoming {
     background-color: var(--color-overlay-light);
     color: var(--color-accent);
-    /* padding-bottom: 60px; */
+    padding-bottom: 40px;
 }
 
 .music__content-container {
