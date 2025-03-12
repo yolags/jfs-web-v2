@@ -62,6 +62,34 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
+    // Función del Carrusel de Reseñas
+    function initReviewCarousel() {
+        const reviews = document.querySelectorAll(".review");
+        const prevBtn = document.getElementById("prevBtn");
+        const nextBtn = document.getElementById("nextBtn");
+        let currentIndex = 0;
+
+        function updateReviews() {
+            reviews.forEach((review, index) => {
+                review.style.opacity = index === currentIndex ? "1" : "0";
+                review.style.transform = index === currentIndex ? "translateX(0)" : "translateX(100%)";
+                review.style.position = index === currentIndex ? "relative" : "absolute";
+            });
+        }
+
+        prevBtn.addEventListener("click", () => {
+            currentIndex = (currentIndex - 1 + reviews.length) % reviews.length;
+            updateReviews();
+        });
+
+        nextBtn.addEventListener("click", () => {
+            currentIndex = (currentIndex + 1) % reviews.length;
+            updateReviews();
+        });
+
+        updateReviews();
+    };
+
     // Event listeners específicos para cookies
     const initializeCookieListeners = () => {
         const acceptCookiesBtn = document.getElementById('acceptCookies');
@@ -182,6 +210,7 @@ document.addEventListener('DOMContentLoaded', () => {
         initializeEventListeners();
         handleScroll();
         addFaviconsToProjectCards();
+        initReviewCarousel();
         if (typeof AOS !== 'undefined') {
             AOS.init();
         }
