@@ -675,16 +675,9 @@ a{
     position: relative;
     max-width: 700px;
     margin: 0 auto;
-    /* margin: auto; */
     overflow: hidden;
     min-height: 100px;
 }
-
-/* .reviews__carousel {
-    
-    transition: transform 0.5s ease-in-out;
-    width: 100%;
-} */
 
 .reviews__carousel {
     display: flex;
@@ -748,12 +741,10 @@ a{
 
 .prev {
     left: 0;
-    /* z-index: 9; */
 }
 
 .next {
     right: 0;
-    /* z-index: 9; */
 }
 
 /* CONTACTO */
