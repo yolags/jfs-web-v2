@@ -29,10 +29,15 @@ Repositorio del sitio web oficial de **José Francisco Sánchez**, guitarrista, 
 - ✅ Metadatos SEO optimizados
 
 ## 🖥️ Desarrollo local
+
+Para clonar el repositorio y ejecutar el proyecto localmente, usa los siguientes comandos:
+
 ```bash
 git clone https://github.com/yolags/jfs-web-v2.git
 cd jfs-web-v2
-# Abrir con Live Server (VS Code) o servidor local
+```
+
+Después, puedes abrir el proyecto con **Live Server** en VS Code o cualquier servidor local de tu preferencia.
 
 ## 📜 Licencia
 Código bajo [MIT License](/LICENSE).  
