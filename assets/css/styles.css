@@ -4,7 +4,7 @@
     font-style: normal;
     font-weight: 400;
     font-display: swap;
-    src: url('https://fonts.gstatic.com/s/bebasneue/v14/JTUSjIg1_i6t8kCHKm459WlhzQ.woff2') format('woff2');
+    src: url('/assets/fonts/bebas-neue-v14-latin/bebas-neue-v14-latin-regular.woff2') format('woff2');
 }
 /* Raleway */
 @font-face {
@@ -12,7 +12,7 @@
     font-style: normal;
     font-weight: 100 900;
     font-display: swap;
-    src: url('https://fonts.gstatic.com/s/raleway/v19/1Ptug8zYS_SKggPNyC0IT4ttDfA.woff2') format('woff2');
+    src: url('/assets/fonts/raleway-v34-latin/raleway-v34-latin-500.woff2') format('woff2');
 }
 /* Variables Globales */
 :root {
@@ -277,7 +277,7 @@ a{
 
 /* MUSICA */
 .music {
-    background-image: url('./images/music/jfrancisco-electric-guitar-music.webp');
+    background-image: url('/assets/images/music/jfrancisco-electric-guitar-music.webp');
     background-size: cover;
     background-position: center 23%;
 }
@@ -545,7 +545,7 @@ a{
 }
 
 .classes__banner {
-    background-image: url('./images/classes/jfrancisco-alumnos.webp');
+    background-image: url('/assets/images/classes/jfrancisco-alumnos.webp');
     height: 400px;
     background-size: cover;
     background-position: center 23%;
@@ -611,15 +611,15 @@ a{
 }
 
 .class-card__icon--individual {
-    background-image: url('./images/icons/icono-person.svg');
+    background-image: url('/assets/icons/icono-person.svg');
 }
 
 .class-card__icon--group {
-    background-image: url('./images/icons/icono-group.svg');
+    background-image: url('/assets/icons/icono-group.svg');
 }
 
 .class-card__icon--ensemble {
-    background-image: url('./images/icons/icono-ensamble.svg');
+    background-image: url('/assets/icons/icono-ensamble.svg');
 }
 
 .class-card__features {

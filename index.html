@@ -10,23 +10,22 @@
     <!-- Título de la página -->
     <title>José Francisco Sánchez - Guitarrista</title>
     <!-- Favicon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/public/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/public/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/public/favicon/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
     <!-- Preconnect de fuentes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <!-- Preload de fuentes críticas -->
-    <link rel="preload" href="https://fonts.gstatic.com/s/bebasneue/v14/JTUSjIg1_i6t8kCHKm459WlhzQ.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-    <link rel="preload" href="https://fonts.gstatic.com/s/raleway/v19/1Ptug8zYS_SKggPNyC0IT4ttDfA.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-    <!-- Carga de estilos de fuentes -->
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Raleway:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="preload" href="/assets/fonts/bebas-neue-v14-latin/bebas-neue-v14-latin-regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="/assets/fonts/raleway-v34-latin/raleway-v34-latin-500.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="/assets/css/styles.css" as="style">
     <!-- Estilos -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="/assets/css/vendor/font-awesome.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/assets/css/vendor/aos.css">
+    <link rel="stylesheet" href="/assets/css/styles.css">
 </head>
 <body>
     <header class="header" id="header">
@@ -48,7 +47,7 @@
     <!-- Home -->
     <div id="home" class="home" role="region">
         <div class="home__content">
-            <img src="./images/jfrancisco-electric-guitar.webp" alt="José Francisco Sánchez tocando la guitarra" class="home__image">
+            <img src="/assets/images/jfrancisco-electric-guitar.webp" alt="José Francisco Sánchez tocando la guitarra" class="home__image">
             <div class="home__social">
                 <div class="home__social-icons social-icons">
                     <a href="https://www.instagram.com/jfranciscomusica" class="home__social-link" aria-label="Ver @jfranciscomusica en Instagram">
@@ -77,7 +76,7 @@
                 </p>
             </div>
             <div class="bio__image-wrapper">
-                <img src="./images/bio/jfrancisco-electric-guitar-bio.webp" alt="José Francisco Sánchez" class="bio__image" loading="lazy">
+                <img src="/assets/images/bio/jfrancisco-electric-guitar-bio.webp" alt="José Francisco Sánchez" class="bio__image" loading="lazy">
             </div>
         </div>
     </section>
@@ -87,7 +86,7 @@
             <div class="music__content-container" data-aos="fade-up" data-aos-duration="1000">
                 <div class="music__info">
                     <h3 class="music__song-title">Vaivén</h3>
-                    <img src="./images/music/vaiven.webp" alt="Portada del sencillo Vaivén" class="music__image" data-aos="fade-up" data-aos-duration="1000" loading="lazy">
+                    <img src="/assets/images/music/vaiven.webp" alt="Portada del sencillo Vaivén" class="music__image" data-aos="fade-up" data-aos-duration="1000" loading="lazy">
                     <p class="music__description">Una pieza sobre el ir y venir de la mente y el corazón frente a la decisión de emigrar.</p>
                 </div>
                 <div class="music__spotify-playlist">
@@ -98,9 +97,9 @@
         </div>
         <div class="music__videos" role="region">
             <div class="music__video-list">
-                <iframe class="music__video" src="https://www.youtube.com/embed/Ug2Sl9nWimA?si=7vG8VAkA5mywK_jY" title="Video de YouTube: Teaser Caribe Mediterráneo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                <iframe class="music__video" src="https://www.youtube.com/embed/rshI2oEvRDE?si=Xz1blV_mYL2J_U4U" title="Video de YouTube: Vaivén - José Francisco Sánchez" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>             
-                <iframe class="music__video" src="https://www.youtube.com/embed/ENIXbSUkSTk?si=O3PJ-7qhEh3Tu9tr&amp;controls=0" title="Video de YouTube: Si viajas - Samanes" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <iframe class="music__video" src="https://www.youtube.com/embed/Ug2Sl9nWimA?si=7vG8VAkA5mywK_jY" title="Video de YouTube: Teaser Caribe Mediterráneo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
+                <iframe class="music__video" src="https://www.youtube.com/embed/rshI2oEvRDE?si=Xz1blV_mYL2J_U4U" title="Video de YouTube: Vaivén - José Francisco Sánchez" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>             
+                <iframe class="music__video" src="https://www.youtube.com/embed/ENIXbSUkSTk?si=O3PJ-7qhEh3Tu9tr&amp;controls=0" title="Video de YouTube: Si viajas - Samanes" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
             </div>
         </div>
     </section>
@@ -109,7 +108,7 @@
         <div class="projects__cards">
             <article class="project-card" data-aos="fade-up" data-aos-duration="1000">
                 <div class="project-card__image-container">
-                    <img src="./images/projects/jfrancisco-jazz-guitar.webp" alt="Imagen del proyecto José Francisco Sánchez" class="project-card__image" loading="lazy">
+                    <img src="/assets/images/projects/jfrancisco-jazz-guitar.webp" alt="Imagen del proyecto José Francisco Sánchez" class="project-card__image" loading="lazy">
                 </div>
                 <div class="project-card__content">
                     <h3 class="project-card__title">JFrancisco Sánchez</h3>
@@ -128,7 +127,7 @@
             </article>
             <article class="project-card" data-aos="fade-up" data-aos-duration="1000">
                 <div class="project-card__image-container">
-                    <img src="./images/projects/proyecto-samanes.webp" alt="Imagen del agrupación Samanes" class="project-card__image" loading="lazy">
+                    <img src="/assets/images/projects/proyecto-samanes.webp" alt="Imagen del agrupación Samanes" class="project-card__image" loading="lazy">
                 </div>
                 <div class="project-card__content">
                     <h3 class="project-card__title">Samanes</h3>
@@ -147,7 +146,7 @@
             </article>
             <article class="project-card" data-aos="fade-up" data-aos-duration="1000">
                 <div class="project-card__image-container">
-                    <img src="./images/projects/diora-delirio-en-sol.webp" alt="Portada del disco Delirio en sol" class="project-card__image" loading="lazy">
+                    <img src="/assets/images/projects/diora-delirio-en-sol.webp" alt="Portada del disco Delirio en sol" class="project-card__image" loading="lazy">
                 </div>
                 <div class="project-card__content">
                     <h3 class="project-card__title">Diora</h3>
@@ -166,7 +165,7 @@
             </article>
             <article class="project-card" data-aos="fade-up" data-aos-duration="1000">
                 <div class="project-card__image-container">
-                    <img src="./images/projects/proyecto-em-street-band.webp" alt="Imagen del Proyecto EM Street Band" class="project-card__image" loading="lazy">
+                    <img src="/assets/images/projects/proyecto-em-street-band.webp" alt="Imagen del Proyecto EM Street Band" class="project-card__image" loading="lazy">
                 </div>
                 <div class="project-card__content">
                     <h3 class="project-card__title">EM Street Band</h3>
@@ -181,7 +180,7 @@
             </article>
             <article class="project-card" data-aos="fade-up" data-aos-duration="1000">
                 <div class="project-card__image-container">
-                    <img src="./images/projects/caribe-mediterraneo.webp" alt="Imagen de la agrupación Caribe Mediterráneo" class="project-card__image" loading="lazy">
+                    <img src="/assets/images/projects/caribe-mediterraneo.webp" alt="Imagen de la agrupación Caribe Mediterráneo" class="project-card__image" loading="lazy">
                 </div>
                 <div class="project-card__content">
                     <h3 class="project-card__title">Caribe Mediterráneo</h3>
@@ -202,7 +201,7 @@
             </article>
             <article class="project-card" data-aos="fade-up" data-aos-duration="1000">
                 <div class="project-card__image-container">
-                    <img src="./images/projects/venezuela-musica-trabajo.webp" alt="Imagen del Proyecto Venezuela Música y Trabajo" class="project-card__image" loading="lazy">
+                    <img src="/assets/images/projects/venezuela-musica-trabajo.webp" alt="Imagen del Proyecto Venezuela Música y Trabajo" class="project-card__image" loading="lazy">
                 </div>
                 <div class="project-card__content">
                     <h3 class="project-card__title">Venezuela: Música y Trabajo</h3>
@@ -439,7 +438,7 @@
     <div class="modal-overlay" id="modalOverlay" style="display: none"></div>
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/js/all.min.js" integrity="sha512-6sSYJqDreZRZGkJ3b+YfdhB3MzmuP9R7X1QZ6g5aIXhRvR1Y/N/P47jmnkENm7YL3oqsmI6AK+V6AD99uWDnIw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script src="script.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="/js/script.js"></script>
 </body>
 </html>
