@@ -14,6 +14,27 @@
     font-display: swap;
     src: url('/assets/fonts/raleway-v34-latin/raleway-v34-latin-500.woff2') format('woff2');
 }
+/* Font Awesome */
+@font-face {
+    font-family: 'Font Awesome 6 Brands';
+    font-style: normal;
+    font-weight: 400;
+    src: url('/assets/css/vendor/fontawesome-free-6.7.2-web/webfonts/fa-brands-400.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Font Awesome 6 Free';
+    font-style: normal;
+    font-weight: 900;
+    src: url('/assets/css/vendor/fontawesome-free-6.7.2-web/webfonts/fa-solid-900.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Font Awesome 6 Free';
+    font-style: normal;
+    font-weight: 400;
+    src: url('/assets/css/vendor/fontawesome-free-6.7.2-web/webfonts/fa-regular-400.woff2') format('woff2');
+}
 /* Variables Globales */
 :root {
     /* Sistema de colores */
