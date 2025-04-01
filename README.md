@@ -1,8 +1,6 @@
 # José Francisco Sánchez - Guitarrista Profesional 🎸
 
-[![Sitio en vivo](https://img.shields.io/badge/Sitio_Web-Visitar_now-blue?style=for-the-badge)](https://jfranciscomusica.com)
-
-![Vista previa del sitio](https://jfranciscomusica.com)
+[![Sitio en vivo](https://img.shields.io/badge/Sitio_Web-Visitar-ahora-blue?style=for-the-badge)](https://jfranciscomusica.com)
 
 Repositorio del sitio web oficial de **José Francisco Sánchez**, guitarrista, compositor y profesor de guitarra con base en Madrid. Destaca su trayectoria musical, proyectos, clases y grabaciones.
 
