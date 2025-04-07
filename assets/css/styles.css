@@ -320,7 +320,7 @@ a{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
 }
 
 .music__info {
@@ -352,27 +352,6 @@ a{
     text-align: center;
     color: var(--color-accent);
     text-shadow: 1px 1px 4px #222222;
-}
-
-.music__tracklist {
-    font-family: var(--font-family-body);
-    list-style-type: none;
-    padding: 0;
-    margin: 20px 0;
-    text-align: left;
-}
-
-.music__track {
-    margin-bottom: 15px;
-    line-height: 1.5;
-    color: var(--color-accent);
-    text-shadow: 1px 1px 3px rgba(34, 34, 34, 0.7);
-}
-
-.music__track-title {
-    font-weight: 600;
-    color: var(--color-primary);
-    text-shadow: 1px 1px 2px rgba(34, 34, 34, 0.5);
 }
 
 .music__spotify-playlist {
@@ -647,6 +626,10 @@ a{
     gap: 15px;
 }
 
+.class-card__title-linebreak {
+    display: block;
+}
+
 .class-card__icon {
     width: 40px;
     height: 40px;
@@ -742,7 +725,7 @@ a{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    min-height: 150px; /* Mantiene la altura de cada reseña */
+    min-height: 150px;
 }
 
 /* Mostrar reseña activa */
@@ -798,6 +781,30 @@ a{
 
 .next {
     right: 10px; /* Ajusta según sea necesario */
+}
+
+/* RESEÑAS - BOTÓN */
+.reviews__more-container {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.reviews__more-link {
+    display: inline-block;
+    background-color: var(--color-secondary);
+    color: var(--color-accent);
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    border: 2px solid var(--color-primary);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-family: var(--font-family-body);
+    font-weight: 500;
+}
+
+.reviews__more-link:hover {
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
 }
 
 /* CONTACTO */
